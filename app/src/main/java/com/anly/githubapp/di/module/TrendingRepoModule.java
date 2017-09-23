@@ -9,9 +9,7 @@ import dagger.Module;
 import dagger.Provides;
 import retrofit2.Retrofit;
 
-/**
- * Created by mingjun on 16/7/18.
- */
+
 @Module
 public class TrendingRepoModule {
 

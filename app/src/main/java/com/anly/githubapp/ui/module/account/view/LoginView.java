@@ -1,6 +1,6 @@
 package com.anly.githubapp.ui.module.account.view;
 
-import com.anly.githubapp.data.model.User;
+import com.anly.githubapp.data.model.ElmUser;
 import com.anly.mvp.lce.LoadView;
 
 /**
@@ -8,5 +8,5 @@ import com.anly.mvp.lce.LoadView;
  */
 public interface LoginView extends LoadView {
 
-    void loginSuccess(User user);
+    void loginSuccess(ElmUser user);
 }

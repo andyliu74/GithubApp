@@ -22,6 +22,7 @@ import com.anly.githubapp.di.component.DaggerMainComponent;
 import com.anly.githubapp.di.component.MainComponent;
 import com.anly.githubapp.di.module.ActivityModule;
 import com.anly.githubapp.ui.base.BaseActivity;
+import com.anly.githubapp.ui.module.repo.DoctorListFragment;
 import com.anly.githubapp.ui.module.repo.MostStarFragment;
 import com.anly.githubapp.ui.module.repo.SearchActivity;
 import com.anly.githubapp.ui.module.repo.TrendingContainerFragment;
@@ -93,12 +94,9 @@ public class MainActivity extends BaseActivity implements HasComponent<MainCompo
 
     private Fragment mCurrentFragment;
     private void switchMenu(String fragmentName) {
-
         Fragment fragment = mFragmentManager.findFragmentByTag(fragmentName);
-
         if (fragment != null) {
             if (fragment == mCurrentFragment) return;
-
             mFragmentManager.beginTransaction().show(fragment).commit();
         } else {
             fragment = Fragment.instantiate(this, fragmentName);
@@ -114,13 +112,14 @@ public class MainActivity extends BaseActivity implements HasComponent<MainCompo
 
     private String getFragmentName(int menuId) {
         switch (menuId) {
-            case R.id.menu_trending:
-                return TrendingContainerFragment.class.getName();
+//            case R.id.menu_trending:
+//                return TrendingContainerFragment.class.getName();
             case R.id.menu_most_stars:
                 return MostStarFragment.class.getName();
             case R.id.menu_account:
                 return MineFragment.class.getName();
-
+            case R.id.menu_doctor:
+                return DoctorListFragment.class.getName();
             default:
                 return null;
         }
@@ -128,9 +127,9 @@ public class MainActivity extends BaseActivity implements HasComponent<MainCompo
 
     private void changeTitle(int menuId) {
         switch (menuId) {
-            case R.id.menu_trending:
-                setTitle(R.string.menu_trending);
-                break;
+//            case R.id.menu_trending:
+//                setTitle(R.string.menu_trending);
+//                break;
 
             case R.id.menu_most_stars:
                 setTitle(R.string.menu_most_star);
@@ -138,6 +137,10 @@ public class MainActivity extends BaseActivity implements HasComponent<MainCompo
 
             case R.id.menu_account:
                 setTitle(R.string.menu_account);
+                break;
+
+            case R.id.menu_doctor:
+                setTitle(R.string.doctor);
                 break;
 
             default:

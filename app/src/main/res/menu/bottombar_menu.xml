@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_trending"
+        android:id="@+id/menu_doctor"
         android:icon="@drawable/ic_trending_up"
-        android:title="@string/menu_trending" />
+        android:title="@string/doctor" />
     <item
         android:id="@+id/menu_most_stars"
         android:icon="@drawable/ic_most_star"

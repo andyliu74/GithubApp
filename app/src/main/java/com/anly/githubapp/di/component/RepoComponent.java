@@ -13,9 +13,7 @@ import com.anly.githubapp.ui.module.repo.UserListActivity;
 
 import dagger.Component;
 
-/**
- * Created by mingjun on 16/7/7.
- */
+
 @PerActivity
 @Component(
         dependencies = ApplicationComponent.class,

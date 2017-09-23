@@ -15,14 +15,12 @@ public class RxMvpPresenter<V extends MvpView> extends BaseMvpPresenter<V> {
     @Override
     public void attachView(V mvpView) {
         super.attachView(mvpView);
-
         mCompositeSubscription = new CompositeSubscription();
     }
 
     @Override
     public void detachView() {
         super.detachView();
-
         mCompositeSubscription.clear();
         mCompositeSubscription = null;
     }

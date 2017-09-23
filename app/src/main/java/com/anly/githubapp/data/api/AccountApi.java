@@ -1,6 +1,6 @@
 package com.anly.githubapp.data.api;
 
-import com.anly.githubapp.data.model.User;
+import com.anly.githubapp.data.model.ElmUser;
 
 import rx.Observable;
 
@@ -9,5 +9,5 @@ import rx.Observable;
  */
 public interface AccountApi {
 
-    Observable<User> login(String username, String password);
+    Observable<ElmUser> login(String username, String password);
 }

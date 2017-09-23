@@ -8,7 +8,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
 
-/**
+/***
  * Created by mingjun on 16/7/18.
  */
 public class RepoListRecyclerAdapter extends BaseQuickAdapter<Repo> {

@@ -21,8 +21,8 @@ import okhttp3.Response;
  */
 public class GithubAuthRetrofit extends BaseRetrofit {
 
-    private static final String END_POINT = "https://api.github.com/";
-
+//    private static final String END_POINT = "https://api.github.com/";
+    private static final String END_POINT = "http://192.168.48.129:8001/";
     private String username;
     private String password;
 
@@ -63,28 +63,28 @@ public class GithubAuthRetrofit extends BaseRetrofit {
         @Override
         public OkHttpClient.Builder customize(OkHttpClient.Builder builder) {
 
-            if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password)) {
-                builder.addInterceptor(new Interceptor() {
-                    @Override
-                    public Response intercept(Chain chain) throws IOException {
-
-                        // https://developer.github.com/v3/auth/#basic-authentication
-                        // https://developer.github.com/v3/oauth/#non-web-application-flow
-                        String userCredentials = username + ":" + password;
-
-                        String basicAuth =
-                                "Basic " + new String(Base64.encode(userCredentials.getBytes(), Base64.DEFAULT));
-
-                        Request original = chain.request();
-
-                        Request.Builder requestBuilder = original.newBuilder()
-                                .header("Authorization", basicAuth.trim());
-
-                        Request request = requestBuilder.build();
-                        return chain.proceed(request);
-                    }
-                });
-            }
+//            if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password)) {
+//                builder.addInterceptor(new Interceptor() {
+//                    @Override
+//                    public Response intercept(Chain chain) throws IOException {
+//
+//                        // https://developer.github.com/v3/auth/#basic-authentication
+//                        // https://developer.github.com/v3/oauth/#non-web-application-flow
+//                        String userCredentials = username + ":" + password;
+//
+//                        String basicAuth =
+//                                "Basic " + new String(Base64.encode(userCredentials.getBytes(), Base64.DEFAULT));
+//
+//                        Request original = chain.request();
+//
+//                        Request.Builder requestBuilder = original.newBuilder()
+//                                .header("Authorization", basicAuth.trim());
+//
+//                        Request request = requestBuilder.build();
+//                        return chain.proceed(request);
+//                    }
+//                });
+//            }
 
             return builder;
         }

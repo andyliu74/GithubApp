@@ -67,7 +67,6 @@ public class IntroduceActivity extends AppIntro2 {
 
     private void goMain() {
         AppPref.setAlreadyRun(this);
-
         MainActivity.launch(this);
         finish();
     }

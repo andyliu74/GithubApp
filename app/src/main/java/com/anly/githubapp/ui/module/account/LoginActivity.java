@@ -13,8 +13,7 @@ import android.widget.ImageView;
 import com.anly.githubapp.GithubApplication;
 import com.anly.githubapp.R;
 import com.anly.githubapp.common.util.InputMethodUtils;
-import com.anly.githubapp.data.model.User;
-import com.anly.githubapp.data.pref.AccountPref;
+import com.anly.githubapp.data.model.ElmUser;
 import com.anly.githubapp.di.HasComponent;
 import com.anly.githubapp.di.component.AccountComponent;
 import com.anly.githubapp.di.component.DaggerAccountComponent;
@@ -23,7 +22,6 @@ import com.anly.githubapp.di.module.ActivityModule;
 import com.anly.githubapp.presenter.account.LoginPresenter;
 import com.anly.githubapp.ui.base.BaseLoadingActivity;
 import com.anly.githubapp.ui.module.account.view.LoginView;
-import com.anly.githubapp.ui.module.main.MainActivity;
 
 import javax.inject.Inject;
 
@@ -99,9 +97,9 @@ public class LoginActivity extends BaseLoadingActivity implements LoginView, Has
     }
 
     @Override
-    public void loginSuccess(User user) {
+    public void loginSuccess(ElmUser user) {
         Snackbar.make(mLoginBtn, "Login Success", Snackbar.LENGTH_LONG).show();
-        AccountPref.saveLogonUser(this, user);
+//        AccountPref.saveLogonUser(this, user);
         finish();
     }
 }
